@@ -1,22 +1,9 @@
 #pragma once
 
-#include <WillowVox/core/Application.h>
-#include <WillowVox/rendering/Mesh.h>
-#include <WillowVox/rendering/BaseMaterial.h>
-#include <WillowVox/rendering/Camera.h>
-#include <WillowVox/rendering/Texture.h>
+#include <WillowVox/WillowVox.h>
 #include <WillowVox/core/EntryPoint.h>
-#include <WillowVox/core/Logger.h>
-#include <WillowVox/rendering/engine-default/TextureMaterial.h>
-#include <WillowVox/rendering/engine-default/Vertex.h>
-#include <WillowVox/rendering/engine-default/ChunkVertex.h>
-#include <WillowVox/rendering/engine-default/ChunkSolidMaterial.h>
-#include <WillowVox/rendering/engine-default/TextureMaterial.h>
-#include <WillowVox/physics/Physics.h>
-#include <WillowVox/resources/Blocks.h>
+#include <WillowVox/rendering/Camera.h>
 #include <TemplateWorld.h>
-#include <imgui/imgui.h>
-#include <cstdint>
 
 using namespace WillowVox;
 
