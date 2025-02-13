@@ -6,8 +6,11 @@ set(CMAKE_GENERATOR_PLATFORM x64)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Define source files
-file(GLOB_RECURSE GAME_SRC src/*.cpp)
+# Create the executable
+add_executable(TemplateGame
+    src/main.cpp
+    # ADD ANY ADDITIONAL CPP FILES HERE
+)
 
 # set variables based on build type
 if (CMAKE_CONFIGURATION_TYPES)
@@ -18,20 +21,17 @@ else()
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(WILLOWVOX_DLL ${CMAKE_SOURCE_DIR}/WillowVoxEngine/bin/debug/WillowVoxEngine${CMAKE_SHARED_LIBRARY_SUFFIX})
         set(WILLOWVOX_LIB ${CMAKE_SOURCE_DIR}/WillowVoxEngine/lib/debug/WillowVoxEngine${CMAKE_STATIC_LIBRARY_SUFFIX})
-        set(WILLOWVOX_COPY_PATH ${CMAKE_BINARY_DIR}/bin/Debug)
+        set(WILLOWVOX_COPY_PATH $<TARGET_FILE_DIR:TemplateGame>)
     else()
         set(WILLOWVOX_DLL ${CMAKE_SOURCE_DIR}/WillowVoxEngine/bin/release/WillowVoxEngine${CMAKE_SHARED_LIBRARY_SUFFIX})
         set(WILLOWVOX_LIB ${CMAKE_SOURCE_DIR}/WillowVoxEngine/lib/release/WillowVoxEngine${CMAKE_STATIC_LIBRARY_SUFFIX})
-        set(WILLOWVOX_COPY_PATH ${CMAKE_BINARY_DIR}/bin/Release)
+        set(WILLOWVOX_COPY_PATH $<TARGET_FILE_DIR:TemplateGame>)
     endif()
 endif()
 
 message("WILLOWVOX_COPY_PATH: ${WILLOWVOX_COPY_PATH}")
 message("WILLOWVOX_DLL: ${WILLOWVOX_DLL}")
 message("WILLOWVOX_LIB: ${WILLOWVOX_LIB}")
-
-# Create the executable
-add_executable(TemplateGame ${GAME_SRC})
 
 # Set output directories
 set_target_properties(TemplateGame PROPERTIES
