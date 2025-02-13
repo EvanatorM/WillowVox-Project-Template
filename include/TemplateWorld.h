@@ -6,7 +6,7 @@
 
 using namespace WillowVox;
 
-namespace TemplateGame {
+namespace TemplateProject {
     class TemplateWorld : public World
     {
     public:
@@ -14,7 +14,7 @@ namespace TemplateGame {
         {
             m_mainCamera = player;
 
-            _worldGen = new WorldGen();
+            _worldGen = new WorldGen(0);
             m_chunkManager = new ChunkManager(*_worldGen);
         }
 

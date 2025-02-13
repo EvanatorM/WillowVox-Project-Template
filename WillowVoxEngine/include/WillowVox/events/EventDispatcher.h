@@ -2,7 +2,6 @@
 
 #include <WillowVox/WillowVoxDefines.h>
 #include <WillowVox/events/Event.h>
-#include <WillowVox/core/Logger.h>
 #include <functional>
 #include <unordered_map>
 #include <vector>

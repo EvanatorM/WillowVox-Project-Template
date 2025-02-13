@@ -7,16 +7,16 @@
 
 using namespace WillowVox;
 
-namespace TemplateGame
+namespace TemplateProject
 {
-	class TestGameApp : public Application
+	class TemplateApp : public Application
 	{
 	public:
-		TestGameApp()
+		TemplateApp()
 		{
-			_applicationName = "Template Game";
-			_defaultWindowWidth = 1920;
-			_defaultWindowHeight = 1080;
+			_applicationName = "Template App";
+			//_defaultWindowWidth = 1920; // Default window width
+			//_defaultWindowHeight = 1080; // Default window height
 		}
 
 		void LoadAssets() override
@@ -34,7 +34,7 @@ namespace TemplateGame
 			_renderingAPI->SetCullFace(true);
 			_renderingAPI->SetDepthTest(true);
 
-			_camera = new WillowVox::Camera(_window);
+			_camera = new Camera(_window);
 
 			m_world = new TemplateWorld(_camera);
 		}
@@ -67,5 +67,5 @@ namespace TemplateGame
 
 WillowVox::Application* WillowVox::CreateApplication()
 {
-	return new TemplateGame::TestGameApp();
+	return new TemplateProject::TemplateApp();
 }
